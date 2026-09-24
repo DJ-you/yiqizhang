@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/shared/index",
+    "pages/add/index",
+    "pages/ledger/index",
+    "pages/settlement/index",
+    "pages/calendar/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F7F8FA",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "一起记",
+    "backgroundColor": "#F7F8FA",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8A8F98",
+    "selectedColor": "#16181D",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "我的账本" },
+      { "pagePath": "pages/shared/index", "text": "共享账本" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

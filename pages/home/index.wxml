@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="hero card">
+    <view class="hero-top">
+      <view><view class="eyebrow">{{monthLabel}}个人账本</view><view class="hero-label">本月支出</view><view class="hero-amount">¥{{expense}}</view></view>
+      <view class="month-switch"><view class="month-arrow" data-offset="-1" bindtap="changeMonth">←</view><view class="month-label">{{monthLabel}}</view><view class="month-arrow" data-offset="1" bindtap="changeMonth">→</view></view>
+    </view>
+    <view class="hero-stats"><view class="hero-stat"><view class="stat-label">收入</view><view class="stat-value">¥{{income}}</view></view><view class="divider"></view><view class="hero-stat"><view class="stat-label">结余</view><view class="stat-value">¥{{balance}}</view></view></view>
+  </view>
+  <view class="quick-grid"><view class="quick card" bindtap="goAdd"><view class="quick-icon">＋</view><view><view class="quick-title">记一笔</view><view class="quick-desc">记录个人收入或支出</view></view></view><view class="quick card" bindtap="goShared"><view class="quick-icon people">≋</view><view><view class="quick-title">一起算</view><view class="quick-desc">多人分摊与自动结算</view></view></view></view>
+  <view class="section-title">消费结构</view><view class="card"><block wx:if="{{categories.length}}"><view wx:for="{{categories}}" wx:key="key" class="category-row"><view class="category-main"><view class="category-name">{{item.label}}</view><view class="category-track"><view class="category-bar" style="width: {{item.percent}}%;"></view></view></view><view class="category-right"><view>¥{{item.amount}}</view><view class="muted small">{{item.percent}}%</view></view></view></block><view wx:else class="empty compact">本月还没有支出，先记第一笔吧。</view></view>
+  <view class="section-title">最近账单</view><view class="card recent-card"><block wx:if="{{recent.length}}"><view wx:for="{{recent}}" wx:key="id" class="transaction-row" data-id="{{item.id}}" bindlongpress="deleteTransaction"><view class="transaction-icon">{{item.iconText}}</view><view class="transaction-info"><view class="transaction-title">{{item.note || item.categoryLabel}}</view><view class="muted small">{{item.date}} · {{item.categoryLabel}}</view></view><view class="transaction-amount {{item.type === 'income' ? 'amount-income' : 'amount-expense'}}">{{item.amountText}}</view></view></block><view wx:else class="empty">还没有账单记录</view></view>
+</view>
+<view class="home-entry-card" bindtap="goCalendar"><text class="entry-icon">📅</text><text>账单日历</text></view>

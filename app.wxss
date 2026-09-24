@@ -1,0 +1,16 @@
+page {
+  background: #f7f8fa;
+  color: #191b1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+}
+.container { padding: 28rpx 28rpx 48rpx; }
+.card { background: #ffffff; border-radius: 28rpx; padding: 28rpx; box-shadow: 0 8rpx 28rpx rgba(25, 27, 31, 0.05); }
+.section-title { font-size: 30rpx; font-weight: 700; margin: 34rpx 4rpx 18rpx; }
+.muted { color: #8a8f98; }
+.primary-btn { background: #1f2329; color: #ffffff; border-radius: 22rpx; font-size: 28rpx; font-weight: 600; }
+.secondary-btn { background: #eef0f3; color: #24272d; border-radius: 22rpx; font-size: 28rpx; font-weight: 600; }
+button::after { border: none; }
+.amount-income { color: #1f8f5f; }
+.amount-expense { color: #17191d; }
+.empty { text-align: center; padding: 54rpx 24rpx; color: #9ca0a8; }

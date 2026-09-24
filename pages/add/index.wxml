@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="type-switch"><view class="type-item {{type === 'expense' ? 'active' : ''}}" data-type="expense" bindtap="setType">支出</view><view class="type-item {{type === 'income' ? 'active' : ''}}" data-type="income" bindtap="setType">收入</view></view>
+  <view class="amount-card card"><view class="muted amount-label">{{type === 'expense' ? '这笔花了多少？' : '这笔收入多少？'}}</view><view class="amount-input-wrap"><text class="currency">¥</text><input class="amount-input" type="digit" value="{{amount}}" bindinput="onAmount" placeholder="0.00" focus /></view></view>
+  <view class="section-title">分类</view><view class="category-grid card"><view wx:for="{{categories}}" wx:key="key" class="category-item {{category === item.key ? 'selected' : ''}}" data-key="{{item.key}}" bindtap="chooseCategory"><view class="category-icon">{{item.icon}}</view><view>{{item.label}}</view></view></view>
+  <view class="section-title">详情</view><view class="card form-card"><view class="form-row"><view class="form-label">日期</view><picker mode="date" value="{{date}}" bindchange="onDate"><view class="form-value">{{date}} ›</view></picker></view><view class="form-row"><view class="form-label">备注</view><input class="note-input" value="{{note}}" bindinput="onNote" placeholder="例如：午饭、地铁、工资" maxlength="30" /></view></view>
+  <button class="primary-btn save-btn" bindtap="save">保存这笔账</button>
+</view>
