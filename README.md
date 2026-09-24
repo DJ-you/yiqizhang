@@ -22,24 +22,28 @@
 
 ---
 
-# ✨ 功能展示
+## ✨ 核心功能
 
-## 1. 个人账本
+### 1. 个人账本
 
 支持个人收入、支出记录，以及消费分类统计。
 
 主要功能：
 
-- 收入/支出记录
+- 收入 / 支出记录
 - 消费分类统计
 - 月份切换
 - 最近账单查看
 
-![首页](assets/demo/首页.png)
+
+<div align="center">
+<img src="assets/demo/首页.png" width="300">
+</div>
+
 
 ---
 
-## 2. 共享账本
+### 2. 共享账本
 
 面向旅行、聚餐、合租等多人消费场景。
 
@@ -50,11 +54,15 @@
 - 记录共同消费
 - 查看成员消费情况
 
-![共享账单](assets/demo/共享账单.png)
+
+<div align="center">
+<img src="assets/demo/共享账单.png" width="300">
+</div>
+
 
 ---
 
-## 3. AA 自动结算
+### 3. AA 自动结算
 
 根据每个成员实际支付金额和消费参与情况，自动计算最终转账方案。
 
@@ -64,11 +72,15 @@
 - 谁需要补钱
 - 每个人最终承担金额
 
-![AA结算结果](assets/demo/AA结算结果.png)
+
+<div align="center">
+<img src="assets/demo/AA结算结果.png" width="300">
+</div>
+
 
 ---
 
-## 4. 账单日历
+### 4. 账单日历
 
 通过日历视图查看每日消费记录。
 
@@ -78,30 +90,89 @@
 - 快速定位历史账单
 - 月份切换
 
-![账单日历](assets/demo/日历浏览.png)
+
+<div align="center">
+<img src="assets/demo/日历浏览.png" width="300">
+</div>
+
 
 ---
 
+# 🛠 技术方案
 
-## 项目结构
+## 技术栈
 
-    yiqizhang
-    │
-    ├── assets              # 图片资源
-    │
-    ├── pages               # 页面模块
-    │   ├── home            # 首页
-    │   ├── add             # 添加账单
-    │   ├── shared          # 共享账本
-    │   ├── settlement      # 自动结算
-    │   └── calendar        # 账单日历
-    │
-    ├── utils               # 公共工具函数
-    │
-    ├── app.js
-    ├── app.json
-    ├── app.wxss
-    └── project.config.json
+- 微信小程序原生开发
+- JavaScript
+- WXML
+- WXSS
+- 微信 Storage 本地数据存储
+
+
+## 数据设计
+
+采用本地 Storage 进行数据管理：
+
+- 用户账单数据
+- 分类信息
+- 共享账本数据
+- 成员消费记录
+
+
+## 核心逻辑
+
+### 账单管理
+
+用户录入消费信息后：
+
+```
+用户操作
+    ↓
+页面组件
+    ↓
+数据处理逻辑
+    ↓
+Storage 本地存储
+```
+
+
+### AA 结算
+
+根据：
+
+- 每位成员实际支付金额
+- 消费参与情况
+- 总消费金额
+
+计算：
+
+- 每个人应承担金额
+- 最终转账关系
+
+
+---
+
+# 📂 项目结构
+
+```
+yiqizhang
+│
+├── assets                  # 图片资源
+│
+├── pages                   # 页面模块
+│   ├── home                # 首页
+│   ├── add                 # 添加账单
+│   ├── shared              # 共享账本
+│   ├── settlement          # 自动结算
+│   └── calendar            # 账单日历
+│
+├── utils                   # 公共工具函数
+│
+├── app.js
+├── app.json
+├── app.wxss
+└── project.config.json
+```
 
 ---
 
@@ -109,7 +180,9 @@
 
 ## 1. 下载项目
 
-    git clone https://github.com/DJ-you/yiqizhang.git
+```bash
+git clone https://github.com/DJ-you/yiqizhang.git
+```
 
 
 ## 2. 导入项目
@@ -143,11 +216,11 @@
 
 # 🔮 后续规划
 
-- 支持云端数据同步
-- 增加用户账号体系
-- 优化多人协作体验
-- 增加消费趋势分析
-- 增加智能化消费分析能力
+- [ ] 支持云端数据同步
+- [ ] 增加用户账号体系
+- [ ] 优化多人协作体验
+- [ ] 增加消费趋势分析
+- [ ] 增加智能化消费分析能力
 
 
 ---
@@ -156,8 +229,7 @@
 
 产品设计文档：
 
-PRODUCT-v0.1.md
-
+`PRODUCT-v0.1.md`
 
 包含：
 
